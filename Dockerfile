@@ -1,4 +1,2 @@
-FROM ubuntu:latest
-LABEL authors="hyunseoj"
+FROM python
 
-ENTRYPOINT ["top", "-b"]
