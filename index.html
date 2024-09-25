@@ -1,96 +1,69 @@
-
-<!DOCTYPE html> 
-<html> 
-	<head> 
-		<meta charset="UFT-8"> 
-		<title> HOME NETWORK </title>
-		<link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
-	</head> 
-
-	<body> 
-		<div class = "container"> 
-			<div class = "header"> 
-				<H2> HOME IoT </H2> 
-			</div> 
-
-			<div class = "main"> 
-				<div> 
-					<button onclick = "led1_on()">LED 1 ON</button> 
-				
-					<button onclick = "led1_off()">LED 1 OFF</button> 
-				</div>
-
-				<div> 
-					<button onclick = "led2_on()">LED 2 ON</button> 
-				
-					<button onclick = "led2_off()">LED 2 OFF</button> 
-				</div>
-
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css">
+		<title>Python IOT Code</title>
+	</head>
+	<body>
+	    <div class = "container">
+			<div class = "header">
+				<H2> HOME IoT </H2>
 			</div>
-			<div id = "result"> 
 
-			</div> 
+			<div class = "main">
+				<div>
+					<button onclick = "led1_on()">LED 1 ON</button>
 
-		<script>
-			function led1_on(){
-				fetch("/led1/on") 
-				.then(response=> response.text()) 
-				.then(data => {
-					console.log(data); 
-					let result = document.querySelector("#result"); 
-					if (data == "ok") { 
-						result.innerHTML = "<h1> LED 1 is running </h1>"; 
-					}
-					else {
-						result.innerHTML = "<h1> error </h1>"; 
-					} 
-				}); 
-			}	
-	
-			function led1_off(){
-				fetch("/led1/off") 
-				.then(response=> response.text()) 
-				.then(data => {
-					console.log(data); 
-					let result = document.querySelector("#result"); 
-					if (data == "ok") { 
-						result.innerHTML = "<h1> LED 1 is stopping </h1>"; 
-					}
-					else {
-						result.innerHTML = "<h1> error </h1>"; 
-					} 
-				}); 
-			}
-		
-			function led2_on(){
-				fetch("/led2/on") 
-				.then(response=> response.text()) 
-				.then(data => {
-					console.log(data); 
-					let result = document.querySelector("#result"); 
-					if (data == "ok") { 
-						result.innerHTML = "<h1> LED 2 is running </h1>"; 
-					}
-					else {
-						result.innerHTML = "<h1> error </h1>"; 
-					} 
-				}); 
-			}	
-			function led2_off(){
-				fetch("/led2/off") 
-				.then(response=> response.text()) 
-				.then(data => {
-					console.log(data); 
-					let result = document.querySelector("#result"); 
-					if (data == "ok") { 
-						result.innerHTML = "<h1> LED 2 is stopping </h1>"; 
-					}
-					else {
-						result.innerHTML = "<h1> error </h1>"; 
-					} 
-				}); 
-			}
+					<button onclick = "led1_off()">LED 1 OFF</button>
+				</div>
 
-		</script> 
-	</body> 
+				<div>
+					<button onclick = "led2_on()">LED 2 ON</button>
+
+					<button onclick = "led2_off()">LED 2 OFF</button>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+
 </html>
+
+<!--리팩토링 전 코드-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--	<meta charset="UFT-8">-->
+<!--	<title> HOME NETWORK </title>-->
+<!--	<link rel="stylesheet" href="style.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div class = "container">-->
+<!--	<div class = "header">-->
+<!--		<H2> HOME IoT </H2>-->
+<!--	</div>-->
+
+<!--	<div class = "main">-->
+<!--		<div>-->
+<!--			<button onclick = "led1_on()">LED 1 ON</button>-->
+
+<!--			<button onclick = "led1_off()">LED 1 OFF</button>-->
+<!--		</div>-->
+
+<!--		<div>-->
+<!--			<button onclick = "led2_on()">LED 2 ON</button>-->
+
+<!--			<button onclick = "led2_off()">LED 2 OFF</button>-->
+<!--		</div>-->
+<!--	</div>-->
+
+<!--</div>-->
+
+<!--<script src="script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
